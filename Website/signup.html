@@ -36,12 +36,13 @@
 
 
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to us
+  
   const firebaseConfig = {
     apiKey: "AIzaSyC5tZAcpiaGwUAo0NnK3iO3LToMNRisqI0",
     authDomain: "uofthacks2022.firebaseapp.com",
@@ -50,7 +51,9 @@
     messagingSenderId: "125311308975",
     appId: "1:125311308975:web:0eb8603051787f04f1f05a"
   };
-  const app = initializeApp(firebaseConfig); 
+  const app = initializeApp(firebaseConfig);
+
+  var db = firebase.firestore();
  </script>
     
  <script>
@@ -69,6 +72,6 @@
  info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
 }
 </script>
-<script src="index.js"></script>
+<!-- <script src="script.js"></script> -->
   </body>
 </html>
