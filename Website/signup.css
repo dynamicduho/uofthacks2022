@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Nunito+Sans:wght@800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #03174C;
+  color: black;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-top: 60px;
+  color: white;
+
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: -30px;
+  width-max: 50px;
+  color: white;
+
+}
+p {
+  color: white;
+  margin-bottom: 0px;
+}
+
+button {
+  padding: 15px 65px;
+  background: #EBEAEC;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #3F414E;
+  font-weight: 600;
+  color: black;
+
+}
+
+
+
+label {
+  color: white;
+}
+input {
+  background-color: #747E99;
+  width: 90%;
+  max-width: 300px;
+  padding-left: 17px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+::placeholder { 
+  color: whitesmoke;
+  opacity: 0.5; 
+  
+}

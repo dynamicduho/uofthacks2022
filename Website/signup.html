@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Signup - Signline.ai</title>
+    <link href="signup.css" rel="stylesheet" type="text/css" />
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+   <form>
+    <div class="signupform>"
+    <p style="color: white;">Phone Number: </p>
+    <input id="phone" type="tel" name="phone" />
+    <p>Name: </p>
+    <input id="name" type="text" name="name" />
+    <p>Date of Birth: </p>
+    <input id="date" type="date" name="date" />
+    <p>Home Address:  </p>
+    <input id="address" type="text" name="address" />
+    <p>Codewords: </p>
+    <input id="code" type="text" name="code" placeholder="ex: banana, jane, milk" />
+    <br></br>
+    <button>SUBMIT</button>
+    </div>
+</form>
+    <div class="alert alert-info" style="display: none;"></div>
+    
+   
+    
+    <script>
+    const phoneInputField = document.querySelector("#phone");
+   const phoneInput = window.intlTelInput(phoneInputField, {
+     utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+   });
+
+      function process(event) {
+ event.preventDefault();
+
+ const phoneNumber = phoneInput.getNumber();
+
+ info.style.display = "";
+ info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+}
+    </script>
+  </body>
+</html>
