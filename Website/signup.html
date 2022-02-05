@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Signup - Signline.ai</title>
+    <title>Signup - Safeline.ai</title>
     <link href="signup.css" rel="stylesheet" type="text/css" />
      <link
      rel="stylesheet"
@@ -15,8 +15,8 @@
   <body>
     <h1>Sign Up</h1>
    <form>
-    <div class="signupform>"
-    <p style="color: white;">Phone Number: </p>
+    <div class="signupform">
+    <p style="color: white;" id="phonenum">Phone Number: </p>
     <input id="phone" type="tel" name="phone" />
     <p>Name: </p>
     <input id="name" type="text" name="name" />
@@ -27,14 +27,33 @@
     <p>Codewords: </p>
     <input id="code" type="text" name="code" placeholder="ex: banana, jane, milk" />
     <br></br>
-    <button>SUBMIT</button>
     </div>
+     <button onclick="adduser()">SUBMIT</button>
 </form>
     <div class="alert alert-info" style="display: none;"></div>
+
+    <img src="img/bg.png">
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to us
+  const firebaseConfig = {
+    apiKey: "AIzaSyC5tZAcpiaGwUAo0NnK3iO3LToMNRisqI0",
+    authDomain: "uofthacks2022.firebaseapp.com",
+    projectId: "uofthacks2022",
+    storageBucket: "uofthacks2022.appspot.com",
+    messagingSenderId: "125311308975",
+    appId: "1:125311308975:web:0eb8603051787f04f1f05a"
+  };
+  const app = initializeApp(firebaseConfig); 
+ </script>
     
-   
-    
-    <script>
+ <script>
     const phoneInputField = document.querySelector("#phone");
    const phoneInput = window.intlTelInput(phoneInputField, {
      utilsScript:
@@ -49,6 +68,7 @@
  info.style.display = "";
  info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
 }
-    </script>
+</script>
+<script src="index.js"></script>
   </body>
 </html>
