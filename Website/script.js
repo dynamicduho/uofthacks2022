@@ -6,6 +6,4 @@ function adduser() {
 }).then(function() {
   console.log("user added");
   window.location.href = "https://safelineai.cyraalesha.repl.co/success.html";
-});
-    
-  }
+});}

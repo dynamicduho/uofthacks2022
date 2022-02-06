@@ -28,7 +28,7 @@
     <input id="code" type="text" name="code" placeholder="ex: banana, jane, milk" />
     <br></br>
     </div>
-     <button onclick="adduser()">SUBMIT</button>
+     <button id="submit">SUBMIT</button>
 </form>
     <div class="alert alert-info" style="display: none;"></div>
 
@@ -36,27 +36,60 @@
 
 
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to us
-  
-  const firebaseConfig = {
-    apiKey: "AIzaSyC5tZAcpiaGwUAo0NnK3iO3LToMNRisqI0",
-    authDomain: "uofthacks2022.firebaseapp.com",
-    projectId: "uofthacks2022",
-    storageBucket: "uofthacks2022.appspot.com",
-    messagingSenderId: "125311308975",
-    appId: "1:125311308975:web:0eb8603051787f04f1f05a"
-  };
-  const app = initializeApp(firebaseConfig);
+ 
 
-  var db = firebase.firestore();
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+
+
+ const firebaseConfig = {
+  apiKey: "AIzaSyC5tZAcpiaGwUAo0NnK3iO3LToMNRisqI0",
+  authDomain: "uofthacks2022.firebaseapp.com",
+  projectId: "uofthacks2022",
+  storageBucket: "uofthacks2022.appspot.com",
+  messagingSenderId: "125311308975",
+  appId: "1:125311308975:web:0eb8603051787f04f1f05a"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  import { getFirestore, doc, setDoc, getDoc, collection, addDoc} from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
+
+
+   const db = getFirestore();
+
+
+  // add to database function
+
+
+  async function adduser() {
+  console.log("function fired");
+  window.open("/success.html");
+  var ref = collection(db, "users");
+  const docRef = await addDoc (
+    ref, {
+    phone: document.getElementById("phone").value, 
+    name: document.getElementById("name").value, 
+    codeword: document.getElementById("code").value,
+    address: document.getElementById("address").value
+  })
+    
+  
+}
+
+  const element = document.getElementById("submit");
+  console.log("okay at least it works this far");
+  element.addEventListener("click", adduser);
+  
+      
  </script>
     
  <script>
+
+
+   //international phone number system
     const phoneInputField = document.querySelector("#phone");
    const phoneInput = window.intlTelInput(phoneInputField, {
      utilsScript:
