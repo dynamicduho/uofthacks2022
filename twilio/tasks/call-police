@@ -7,7 +7,7 @@
 			"handoff": {
 				"method": "POST",
 				"channel": "voice",
-				"uri": "https://handler.twilio.com/twiml/EHefec071b1023d87b3b8f6d0737b6b013"
+				"uri": "webhook goes here"
 			}
 		}
 	]
