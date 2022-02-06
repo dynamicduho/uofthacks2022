@@ -1,0 +1,13 @@
+{
+	"actions": [
+		{
+			"say": "Ah I see, and where you headed?"
+		},
+		{
+			"listen": true
+		},
+		{
+			"redirect": "task://greeting"
+		}
+	]
+}
