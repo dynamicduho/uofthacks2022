@@ -35,7 +35,8 @@ const fallbackHandler = async (event) => {
   };
 
   try {
-    const result = await instance.post('/engines/davinci/completions', completionParmas);
+    // we used davinci for Safeline, but there are faster GPT-3 engines you can use
+    const result = await instance.post('/engines/davinci/completions', completionParmas); 
     const botResponse = result.data.choices[0].text.trim();
     actions.push({ say: botResponse });
   } catch (err) {

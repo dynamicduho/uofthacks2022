@@ -27,8 +27,8 @@ exports.handler = async function (context, event, callback) {
   const userInfo = await getMessage("");
 
   // Query parameters or values sent in a POST body can be accessed from `event`
-  const from = event.From || '+12262127233';
-  const to = event.To || '+';
+  const from = event.From || '+12262127233'; // the Safeline hotline number
+  const to = event.To || '+YourNumberHere'; // number removed for privacy
   const body = event.Body || `${userInfo}`;
 
   // Use `messages.create` to generate a message. Be sure to chain with `then`
@@ -49,7 +49,7 @@ exports.handler = async function (context, event, callback) {
     });
   
   // Note that TwiML can be hosted at a URL and accessed by Twilio
-  const url = event.Url || '';
+  const url = event.Url || ''; // add your own URL here
 
   // Use `calls.create` to place a phone call. Be sure to chain with `then`
   // and `catch` to properly handle the promise and call `callback` _after_ the
@@ -68,5 +68,7 @@ exports.handler = async function (context, event, callback) {
       return callback(error);
     });
 };
+
+
 
 

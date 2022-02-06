@@ -1,0 +1,10 @@
+{
+	"actions": [
+		{
+			"say": "Hey, how was your day? Where you at? and where are you headed?"
+		},
+		{
+			"listen": true
+		}
+	]
+}
